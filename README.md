@@ -1,4 +1,4 @@
-# Demo Auth0 deployment automation using GitHub Actions
+# Demo Auth0 Deployment Automation using GitHub Actions
 
 ## Table of Contents
 
