@@ -63,5 +63,6 @@ jobs:
           SQLSERVER_PORT: ${{ secrets.SQLSERVER_PORT }}
           SQLSERVER_USER: ${{ secrets.SQLSERVER_USER }}
           SUPPORT_URL: ${{ secrets.SUPPORT_URL }}
+          
         # import tenant configuration
         run: a0deploy import --config_file deploy-config.json --input_file ./auth0/tenant.yaml
