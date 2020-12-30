@@ -38,11 +38,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       
-      - run: npm install --global auth0-deploy-cli
+      - name: install auth0-deploy-cli
+        run: npm install --global auth0-deploy-cli
           
-      - name: Set AUTH0_CLIENT_SECRET
+      - name: Set AUTH0_CLIENT_SECRET and import tenant config
         env:
           AUTH0_CLIENT_SECRET: ${{ secrets.GH_DEPLOY_CLIENT_SECRET }}
-
-      - name: Import tenant config to DEV tenant
         run: a0deploy import --config_file deploy-config.json --input_file ./auth0/tenant.yaml
