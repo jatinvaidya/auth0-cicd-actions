@@ -38,5 +38,5 @@ jobs:
       # Test
       - name: Set AUTH0_CLIENT_SECRET
         env:
-          AUTH0_CLIENT_SECRET: MY-SECRET
+          AUTH0_CLIENT_SECRET: ${{ secrets.GH_DEPLOY_CLIENT_SECRET_DEV }}
         run: echo $AUTH0_CLIENT_SECRET
