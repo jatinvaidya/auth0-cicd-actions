@@ -34,8 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
       # Test
-        - name: Set AUTH0_CLIENT_SECRET
-          env:
-            AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
-          run: echo $AUTH0_CLIENT_SECRET
+      - name: Set AUTH0_CLIENT_SECRET
+        env:
+          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
+        run: echo $AUTH0_CLIENT_SECRET
