@@ -38,5 +38,5 @@ jobs:
       # Test
       - name: Set AUTH0_CLIENT_SECRET
         env:
-          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
+          AUTH0_CLIENT_SECRET: MY-SECRET
         run: echo $AUTH0_CLIENT_SECRET
