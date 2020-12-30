@@ -6,7 +6,7 @@ rules:
     order: 1
 rulesConfigs:
   - key: "MONGO_HOST"
-    value: "@@MONGO_HOST@@"
+    value: "##MONGO_HOST##"
   - key: "MONGO_PORT"
     value: "@@MONGO_PORT@@"
   - key: "MONGO_USER"
@@ -43,10 +43,10 @@ clients:
   - name: business-app01
     allowed_clients: []
     allowed_logout_urls:
-      - 'https://@@APP_HOST@@:@@APP_PORT@@/logout'
+      - "https://@@APP_HOST@@:@@APP_PORT@@/logout"
     app_type: regular_web
     callbacks:
-      - 'https://@@APP_HOST@@:@@APP_PORT@@/callback'
+      - "https://@@APP_HOST@@:@@APP_PORT@@/callback"
     client_aliases: []
     cross_origin_auth: false
     custom_login_page_on: true
