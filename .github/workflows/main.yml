@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
- 
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -31,9 +31,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: clone this repo
+        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -41,7 +42,19 @@ jobs:
       - name: install auth0-deploy-cli
         run: npm install --global auth0-deploy-cli
           
-      - name: Set AUTH0_CLIENT_SECRET and import tenant config
+      - name: set env-vars and import tenant config
         env:
-          AUTH0_CLIENT_SECRET: ${{ secrets.GH_AUTH0_CLIENT_SECRET }}
+          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
+          APP_HOST: ${{ secrets.APP_HOST }}
+          APP_PORT: ${{ secrets.APP_PORT }}
+          MONGO_HOST: ${{ secrets.MONGO_HOST }}
+          MONGO_PASS: ${{ secrets.MONGO_PASS }}
+          MONGO_PORT: ${{ secrets.MONGO_PORT }}
+          MONGO_USER: ${{ secrets.MONGO_USER }}
+          SQLSERVER_HOST: ${{ secrets.SQLSERVER_HOST }}
+          SQLSERVER_PASS: ${{ secrets.SQLSERVER_PASS }}
+          SQLSERVER_PORT: ${{ secrets.SQLSERVER_PORT }}
+          SQLSERVER_USER: ${{ secrets.SQLSERVER_USER }}
+          SUPPORT_URL: ${{ secrets.SUPPORT_URL }}
         run: a0deploy import --config_file deploy-config.json --input_file ./auth0/tenant.yaml
+
