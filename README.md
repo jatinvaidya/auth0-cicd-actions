@@ -18,7 +18,7 @@ Whenever a change is pushed to the `env/dev` branch, the GH `action` will be tri
 
 ## Auth0 Config
 
-The sample deployment pipeline manages the following environment specific items:
+The sample deployment pipeline manages the following `environment-specific` items along with other config:
 
 1. Rule Configs
 2. Custom DB Action Script Config Variables
