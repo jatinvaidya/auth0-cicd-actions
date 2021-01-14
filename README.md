@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [Managed Auth0 Config](#config)
 
 ## About <a name = "about"></a>
 
@@ -16,7 +17,7 @@ Whenever a change is pushed to the `env/dev` branch, the GH `action` will be tri
 4. Inject values for environment specific variables from GH environment secrets.
 5. Run `a0-deploy-cli` import to update the target tenant configuration.
 
-## Auth0 Config
+## Managed Auth0 Config <a name = "config"></a>
 
 The sample deployment pipeline manages the following `environment-specific` items along with other config:
 
