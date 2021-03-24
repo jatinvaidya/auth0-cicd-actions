@@ -65,4 +65,4 @@ jobs:
           SUPPORT_URL: ${{ secrets.SUPPORT_URL }}
           
         # import tenant configuration
-        run: a0deploy import --config_file deploy-config.json --input_file ./auth0/tenant.yaml
+        run: a0deploy import --input_file ./auth0/tenant.yaml
